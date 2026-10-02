@@ -1,1 +1,0 @@
-# intasan25-cmd.github.io
