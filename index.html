@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Panupong Intasan — Business Analyst</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=IBM+Plex+Sans+Thai:wght@400;500&family=Noto+Serif+Thai:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+--bg:#0B0B0C;--ink:#EDE8DD;--mute:#ABA69B;--line:rgba(237,232,221,.14);--gold:#C8A96A;--glow:rgba(200,169,106,.10);--panel:#121214}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#F4F1EA;--ink:#17160F;--mute:#5A564C;--line:rgba(23,22,15,.16);--gold:#8A6A2B;--glow:rgba(138,106,43,.10);--panel:#EBE6DB}}
+:root[data-theme="light"]{--bg:#F4F1EA;--ink:#17160F;--mute:#5A564C;--line:rgba(23,22,15,.16);--gold:#8A6A2B;--glow:rgba(138,106,43,.10);--panel:#EBE6DB}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 18px/1.85;font-variant-numeric:lining-nums "IBM Plex Sans Thai",system-ui,sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;opacity:.06;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+#spot{position:fixed;inset:0;pointer-events:none;z-index:1;background:radial-gradient(520px circle at var(--mx,70%) var(--my,20%),var(--glow),transparent 70%)}
+.w{max-width:1200px;margin:0 auto;padding:0 clamp(20px,4vw,48px);position:relative;z-index:2}
+a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;padding:0}
+:focus-visible{outline:1px solid var(--gold);outline-offset:4px}
+.s{font-family:"Cormorant Garamond","Noto Serif Thai",serif;font-weight:500;letter-spacing:0;font-variant-numeric:lining-nums}
+.cap{font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;color:var(--mute);font-weight:500}
+/* header */
+header.top{position:fixed;top:0;left:0;right:0;z-index:50;padding-top:env(safe-area-inset-top,0px);mix-blend-mode:normal;background:linear-gradient(var(--bg),transparent)}
+header.top .w{display:flex;justify-content:space-between;align-items:center;height:72px}
+header.top nav{display:flex;gap:34px}
+header.top nav a{transition:color .3s}header.top nav a:hover{color:var(--gold)}
+.mono{font-size:1.5rem}
+@media(max-width:640px){header.top nav a:nth-child(-n+3){display:none}}
+/* hero */
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding:120px 0 48px;position:relative}
+.hero h1{font-size:clamp(3.4rem,12vw,11rem);line-height:.9;margin:0;font-weight:500}
+.hero h1 i{color:var(--gold);font-weight:500}
+.hero .row{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:56px;padding-top:28px;border-top:1px solid var(--line);align-items:end}
+.hero p{margin:0;max-width:44ch;color:var(--ink);opacity:.88;font-size:1.1rem}
+.hero .meta{display:flex;gap:40px;justify-content:flex-end}
+.hero .meta b{display:block;font-family:"IBM Plex Sans Thai",sans-serif;font-variant-numeric:lining-nums tabular-nums;font-weight:500;font-size:2.4rem;line-height:1.1;color:var(--ink)}
+@media(max-width:760px){.hero .row{grid-template-columns:1fr}.hero .meta{justify-content:flex-start}}
+.rv{opacity:0;transform:translateY(26px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
+.rv.on{opacity:1;transform:none}
+/* process */
+section{padding:clamp(80px,12vw,160px) 0}
+h2{font-size:clamp(2.4rem,6vw,4.6rem);line-height:1.2;margin:14px 0 0}
+h2 i{color:var(--gold)}
+.proc{display:grid;grid-template-columns:repeat(8,1fr);margin-top:64px;border-top:1px solid var(--line)}
+.proc div{padding:22px 14px 0 0;position:relative}
+.proc div::before{content:"";position:absolute;top:-4px;left:0;width:7px;height:7px;border-radius:50%;background:var(--gold)}
+.proc span{display:block;font-family:"IBM Plex Sans Thai",sans-serif;font-variant-numeric:lining-nums tabular-nums;font-weight:500;font-size:1.15rem;color:var(--gold);margin-bottom:2px}
+.proc b{font-weight:500;font-size:1rem}
+@media(max-width:820px){.proc{grid-template-columns:repeat(2,1fr);gap:0}.proc div{border-top:0;padding:18px 0;border-bottom:1px solid var(--line)}.proc div::before{display:none}}
+/* work */
+.tools{display:flex;justify-content:space-between;flex-wrap:wrap;gap:18px;margin:48px 0 8px}
+.fl{display:flex;gap:26px;flex-wrap:wrap}
+.fl button{color:var(--mute);padding-bottom:4px;border-bottom:1px solid transparent;transition:.3s}
+.fl button:hover{color:var(--ink)}
+.fl button[aria-pressed="true"]{color:var(--gold);border-color:var(--gold)}
+.row2{display:grid;grid-template-columns:48px 128px 1fr 170px 30px;align-items:center;gap:20px;padding:20px 0;border-top:1px solid var(--line);width:100%;text-align:left;transition:padding .45s cubic-bezier(.2,.7,.2,1),color .3s}
+.list{border-bottom:1px solid var(--line)}
+.row2 .n{font-family:"IBM Plex Sans Thai",sans-serif;font-variant-numeric:lining-nums tabular-nums;font-weight:500;color:var(--gold);font-size:1.05rem}
+.row2 .t{font-size:clamp(1.4rem,3vw,2.3rem);line-height:1.35}
+.row2 .t small{display:block;font:400 1rem "IBM Plex Sans Thai",sans-serif;color:var(--mute);margin-top:4px}
+.row2 .g{color:var(--mute)}
+.row2 .a{font-size:1.4rem;color:var(--gold);transform:translateX(-8px);opacity:0;transition:.4s}
+.list:hover .row2:not(:hover){color:var(--mute)}
+.row2:hover{padding-left:20px}.row2:hover .a{opacity:1;transform:none}
+@media(max-width:700px){.row2{grid-template-columns:30px 80px 1fr 20px}.row2 .g{display:none}}
+#pv{position:fixed;right:clamp(20px,5vw,80px);top:50%;width:300px;transform:translateY(-50%) translateX(14px);background:var(--panel);border:1px solid var(--line);padding:24px;z-index:40;opacity:0;pointer-events:none;transition:.4s}
+#pv.on{opacity:1;transform:translateY(-50%)}
+#pv ol{list-style:none;margin:14px 0 0;padding:0}
+#pv li{font-size:1rem;padding:4px 0 4px 18px;position:relative;color:var(--mute)}
+#pv li::before{content:"";position:absolute;left:0;top:14px;width:8px;height:1px;background:var(--gold)}
+@media(max-width:1100px){#pv{display:none}}
+.th{display:block;border:1px solid var(--line)}.th svg,.cv svg,#pvi svg,.hart svg{display:block;width:100%;height:auto}
+.cv{margin-bottom:34px;border:1px solid var(--line)}#pvi{margin-bottom:16px}
+.hart{position:absolute;right:clamp(20px,4vw,48px);top:110px;width:400px;height:430px;display:none;z-index:2}
+.hart div{position:absolute;width:300px;border:1px solid var(--line);box-shadow:0 30px 60px rgba(0,0,0,.35)}
+.hart div:nth-child(1){right:0;top:0;transform:rotate(4deg)}.hart div:nth-child(2){right:80px;top:100px;transform:rotate(-3deg)}.hart div:nth-child(3){right:10px;top:200px;transform:rotate(2deg)}
+@media(min-width:1100px){.hart{display:block}}
+.ab{display:grid;grid-template-columns:220px 1fr;gap:clamp(28px,5vw,72px);align-items:start;margin-top:44px}
+.ab figure{margin:0;border:1px solid var(--line);padding:8px;background:var(--panel)}.ab img{display:block;width:100%;height:auto}
+.ab p{margin:0 0 22px;max-width:62ch}
+.chipg{display:inline-block;border:1px solid var(--gold);color:var(--gold);padding:2px 16px;font-size:.92rem;margin-bottom:22px}
+.edu{border-top:1px solid var(--line);padding:18px 0;margin:8px 0 0}.edu b{font-weight:500;display:block}.edu span{color:var(--mute)}
+.ab .ct2{display:flex;gap:28px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:18px}.ab .ct2 a{border-bottom:1px solid var(--line)}.ab .ct2 a:hover{color:var(--gold)}
+.tt{margin-top:56px}.tt div{display:grid;grid-template-columns:170px 1fr;gap:8px 24px;padding:14px 0;border-top:1px solid var(--line)}.tt b{font-weight:500;color:var(--gold)}
+@media(max-width:700px){.ab{grid-template-columns:1fr}.ab figure{max-width:200px}.tt div{grid-template-columns:1fr}}
+/* capabilities */
+.caps{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));column-gap:48px;margin-top:56px}
+.caps div{font-size:1.05rem;padding:14px 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:12px}
+.caps span{font-family:"IBM Plex Sans Thai",sans-serif;font-variant-numeric:lining-nums tabular-nums;font-weight:500;color:var(--gold);font-size:.95rem}
+/* contact */
+.ct{text-align:center}
+.ct h2{font-size:clamp(2.8rem,9vw,8rem);max-width:12ch;margin:18px auto 44px}
+.btn{display:inline-flex;gap:14px;align-items:center;padding:16px 38px;border:1px solid var(--gold);color:var(--gold);letter-spacing:.16em;font-size:.82rem;text-transform:uppercase;transition:.4s}
+.btn:hover{background:var(--gold);color:var(--bg)}
+.repos{display:flex;justify-content:center;gap:34px;flex-wrap:wrap;margin-top:34px}
+.repos a{color:var(--mute);border-bottom:1px solid var(--line);transition:.3s}.repos a:hover{color:var(--ink)}
+footer{padding:36px 0 48px;border-top:1px solid var(--line);color:var(--mute);font-size:.78rem}
+footer .w{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+/* dialog */
+dialog{margin:0;inset:0;width:100%;height:100%;max-width:none;max-height:none;border:0;background:var(--bg);color:var(--ink);padding:0;overflow-y:auto}
+dialog::backdrop{background:var(--bg)}
+dialog[open]{animation:fd .5s ease}@keyframes fd{from{opacity:0;transform:translateY(18px)}}
+.dg{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(30px,6vw,100px);padding:100px clamp(20px,4vw,48px) 80px;max-width:1200px;margin:0 auto}
+.dg h3{font-size:clamp(2.2rem,5vw,4.2rem);line-height:1.25;margin:18px 0 8px;font-weight:500}
+.dg p{color:var(--mute);margin:0 0 28px;max-width:46ch;font-size:1.05rem}
+.tl{list-style:none;margin:0;padding:0 0 0 26px;border-left:1px solid var(--line)}
+.tl li{position:relative;padding:10px 0;font-size:1.1rem}
+.tl li::before{content:"";position:absolute;left:-30px;top:20px;width:7px;height:7px;border-radius:50%;background:var(--gold)}
+.ft{display:flex;flex-wrap:wrap;gap:8px 22px;margin:0 0 32px;padding:0;list-style:none;color:var(--mute);font-size:.9rem}
+.cl{position:fixed;top:calc(22px + env(safe-area-inset-top,0px));right:clamp(20px,4vw,48px);z-index:5;color:var(--ink)}
+@media(max-width:800px){.dg{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div id="spot"></div>
+<header class="top"><div class="w"><a href="#" class="mono s">P<i>.</i>I</a><nav class="cap"><a href="#about">About</a><a href="#process">Process</a><a href="#work">Work</a><a href="#cap">Capabilities</a><a href="#contact">Contact</a></nav></div></header>
+
+<main>
+<section class="hero" style="padding-bottom:48px"><div class="hart" id="hart" aria-hidden="true"></div><div class="w">
+<div class="cap rv">Business Analyst · Seeking Internship</div>
+<h1 class="s rv" style="margin-top:22px">Panupong<br><i>Intasan</i></h1>
+<div class="row rv"><p>ภาณุพงศ์ อินทะแสน นักศึกษาสายเทคโนโลยีสารสนเทศ ผู้เปลี่ยนปัญหาทางธุรกิจให้เป็น Requirements, Flow และระบบที่ใช้งานได้จริง</p>
+<div class="meta"><div><b id="cP">13</b><span class="cap">Projects</span></div><div><b id="cG">4</b><span class="cap">Disciplines</span></div><div><b id="cS">17</b><span class="cap">Capabilities</span></div></div></div>
+</div></section>
+
+<section id="about" style="padding-bottom:0"><div class="w">
+<div class="cap rv">About</div><h2 class="s rv">ตัวผม <i>เอง</i></h2>
+<div class="ab rv"><figure><img src="data:image/jpeg;base64,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" width="181" height="228" alt="ภาพถ่ายของ Panupong Intasan"></figure>
+<div><span class="chipg">กำลังมองหาโอกาสฝึกงานตำแหน่ง Business Analyst</span>
+<p>นักศึกษา IT ที่มีประสบการณ์ภาคปฏิบัติด้านการเก็บและจัดทำเอกสาร Requirements วิเคราะห์ระบบและกระบวนการ ออกแบบข้อมูลและฐานข้อมูล และพัฒนาระบบเว็บ ถนัดการแปลงความต้องการของผู้ใช้เป็น System Flow, Use Case, UML, DFD, ERD เอกสารทางเทคนิค และ Prototype ที่ใช้งานได้จริง</p>
+<div class="edu"><b>Kasetsart University, Kamphaeng Saen Campus</b><span>ปริญญาตรี สาขาเทคโนโลยีสารสนเทศ · 2023 – ปัจจุบัน · คาดว่าจะจบ 2027</span></div>
+<div class="ct2"><a href="mailto:intasan25@gmail.com">intasan25@gmail.com</a><a href="tel:0922596658">092-259-6658</a><a href="https://github.com/intasan25-cmd" target="_blank" rel="noopener">GitHub ↗</a></div></div></div>
+</div></section>
+<section id="process" style="padding-top:60px"><div class="w">
+<div class="cap rv">The Method</div><h2 class="s rv">จากปัญหา <i>สู่ผลลัพธ์</i></h2>
+<div class="proc rv" id="proc"></div>
+</div></section>
+
+<section id="work"><div class="w">
+<div class="cap rv">Selected Work</div><h2 class="s rv">ผลงาน <i id="cP2">13</i> ชิ้น</h2>
+<div class="tools"><div class="fl cap" id="fl"></div><span class="cap">คลิกเพื่อดูรายละเอียด</span></div>
+<div class="list" id="ls"></div>
+</div></section>
+
+<section id="cap"><div class="w">
+<div class="cap rv">Capabilities</div><h2 class="s rv">สิ่งที่ <i>ผมทำได้</i></h2>
+<div class="caps rv" id="caps"></div>
+<div class="tt rv"><div><b>Database &amp; Data</b><span>MySQL · PostgreSQL · Supabase · SQL · Data Cleaning · Data Visualization</span></div><div><b>Tools</b><span>Figma · Draw.io · Postman · Git · GitHub · VS Code</span></div><div><b>Technical</b><span>HTML · CSS · JavaScript · Node.js · Express.js · REST API · Python · PHP</span></div></div>
+</div></section>
+
+<section id="contact" class="ct"><div class="w">
+<div class="cap rv">Let’s Connect</div>
+<h2 class="s rv">Turning complexity into <i>clarity.</i></h2>
+<div class="rv" style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap"><a class="btn" style="text-transform:none;letter-spacing:.04em;font-size:.95rem" href="mailto:intasan25@gmail.com">intasan25@gmail.com</a><a class="btn" style="letter-spacing:.06em;font-size:.95rem" href="tel:0922596658">092-259-6658</a><a class="btn" href="https://github.com/intasan25-cmd" target="_blank" rel="noopener">GitHub ↗</a></div>
+<div class="repos rv"><a href="https://github.com/intasan25-cmd/yuyenpensuk-website" target="_blank" rel="noopener">yuyenpensuk-website ↗</a><a href="https://github.com/intasan25-cmd/app" target="_blank" rel="noopener">app ↗</a></div>
+</div></section>
+</main>
+
+<footer><div class="w"><span>© Panupong Intasan</span><span>เนื้อหาไม่มีตัวเลขผลลัพธ์ที่ไม่มีข้อมูลยืนยัน</span></div></footer>
+
+<aside id="pv" aria-hidden="true"><div id="pvi"></div><div class="cap">Flow</div><ol id="pvl"></ol></aside>
+<dialog id="dg"><button class="cl cap" id="cl">Close ✕</button><div class="dg" id="dgc"></div></dialog>
+
+<script>
+const G={ba:"Business Analysis",da:"Data & AI",app:"App Development",ux:"UX / Interactive"};
+/* ============================================================
+   วิธีเพิ่มผลงานใหม่: คัดลอกก้อน { ... } ด้านล่างไป 1 ก้อน วางต่อท้ายสุด
+   (ก่อนเครื่องหมาย ]) ใส่ , คั่นระหว่างก้อน แล้วแก้ข้อความ
+
+   cat      หมวด: "ba" Business Analysis | "da" Data & AI | "app" App Development | "ux" UX / Interactive
+   title    ชื่อผลงาน (ตัวใหญ่)
+   sub      ชื่อภาษาอังกฤษ / ปี (บรรทัดเล็ก)
+   desc     คำอธิบายสั้นๆ
+   features รายการฟีเจอร์ (ใส่ได้หลายอัน)
+   flow     ขั้นตอนระบบ คั่นด้วย " → " (แนะนำ 2-8 ขั้น) ภาพประกอบจะสร้างให้อัตโนมัติจากตรงนี้
+   link     (ไม่บังคับ) ลิงก์โค้ด/เว็บ จะมีปุ่มโผล่ในหน้ารายละเอียด
+   ============================================================ */
+const PROJECTS=[
+  {
+    cat: "ba",
+    title: "System Analysis & Design Project",
+    sub: "System Analysis & Design · 2025",
+    desc: "โปรเจกต์วิเคราะห์ระบบตั้งแต่ปัญหาและผู้ใช้งานจนถึง Requirements, Process และ System Design",
+    features: ["Functional Requirements", "Non-functional Requirements", "Use Case", "DFD", "ERD", "Database Design", "Normalization 1NF–3NF", "Technical Documentation", "Prototype"],
+    flow: "Problem → Requirement → Business Process → Use Case → DFD → ERD → System Design → Prototype"
+  },
+  {
+    cat: "ba",
+    title: "ระบบพยากรณ์ราคาทองคำ",
+    sub: "Gold Price Analysis & Forecasting · 2026",
+    desc: "วิเคราะห์ราคาทองคำไทย 96.5% ย้อนหลัง สร้างโมเดลพยากรณ์แนวโน้มพร้อม Dashboard",
+    features: ["Historical Chart", "Predicted Price", "Actual vs Predicted", "Trend Summary"],
+    flow: "Price Source → REST API → Database → Data Cleaning → Feature Engineering → Machine Learning → Prediction → Web Dashboard"
+  },
+  {
+    cat: "ba",
+    title: "อยู่เย็นเป็นสุข วิศวกรรม",
+    sub: "Website & CMS · 2026",
+    desc: "เว็บไซต์องค์กรพร้อมระบบ Admin แปลง Requirements เป็น system flow โครงสร้างฐานข้อมูล และ interface สำหรับจัดการสินค้า บริการ ข่าว และผลงาน พร้อมเตรียมระบบสำหรับ cloud deployment และการย้ายฐานข้อมูล/storage",
+    features: ["Admin Login", "Dashboard", "CRUD", "Image Upload", "Products / Services", "News", "Portfolio"],
+    flow: "Website → Node.js / Express → Supabase Database + Storage",
+    link: "https://github.com/intasan25-cmd/yuyenpensuk-website"
+  },
+  {
+    cat: "ba",
+    title: "ระบบจองที่พัก",
+    sub: "Accommodation Booking System",
+    desc: "ค้นหาและจองที่พักผ่านเว็บไซต์ด้วย HTML, CSS, JavaScript, PHP และ MySQL",
+    features: ["Search", "Check Availability", "Booking", "Confirmation"],
+    flow: "Search → View Details → Select Date → Check Availability → Booking → Confirmation"
+  },
+  {
+    cat: "ba",
+    title: "ระบบหาบ้านให้สัตว์",
+    sub: "Animal Adoption System",
+    desc: "ออกแบบระบบเชื่อมต่อข้อมูลสัตว์กับผู้ที่ต้องการรับเลี้ยง",
+    features: ["Visitor", "Adopter", "Shelter", "Admin"],
+    flow: "View Animals → Search / Filter → Animal Profile → Adoption Request → Review → Approval"
+  },
+  {
+    cat: "ba",
+    title: "ตู้จำหน่ายเครื่องดื่มอัตโนมัติ",
+    sub: "Energy Drink Vending Machine",
+    desc: "เลือกสินค้า ชำระเงินผ่าน PromptPay และสะสมคะแนน (ซื้อ 10 ฟรี 1)",
+    features: ["Cart", "PromptPay", "Payment Status", "Point System"],
+    flow: "Select Product → Cart → Order Summary → PromptPay → Payment Status → Complete → Points"
+  },
+  {
+    cat: "da",
+    title: "รู้จำท่าทางมือ",
+    sub: "Hand Gesture Recognition for Sign Language · 2024",
+    desc: "ออกแบบและทดสอบ workflow การรู้จำท่าทางมือสำหรับภาษามือจากภาพที่เก็บรวบรวม ใช้ Machine Learning จำแนกท่าทางด้วย OpenCV และ NumPy",
+    features: ["Hand Detection", "Landmark", "Classification", "OpenCV", "NumPy"],
+    flow: "Image / Camera → Image Processing → Hand Detection → Landmark → Model → Result"
+  },
+  {
+    cat: "da",
+    title: "Data Cleaning & Visualization",
+    sub: "Data Analysis Project",
+    desc: "จัดการข้อมูลดิบให้พร้อมวิเคราะห์ แล้วนำเสนอด้วย Visualization",
+    features: ["Missing Data", "Preparation", "Visualization"],
+    flow: "Raw Data → Cleaning → Preparation → Analysis → Visualization → Insight"
+  },
+  {
+    cat: "app",
+    title: "Flutter Social Media App",
+    sub: "X-style Application",
+    desc: "Social Media App มี Feed, Profile, Post, Like, Comment และ Audio",
+    features: ["Login", "Profile", "Public Feed", "Audio"],
+    flow: "Flutter → Firebase Auth → Firestore → Firebase Storage"
+  },
+  {
+    cat: "app",
+    title: "ราวตากผ้าอัตโนมัติ",
+    sub: "IoT Automated Clothesline · 2024",
+    desc: "เชื่อมเซนเซอร์ความชื้น/ฝนกับไมโครคอนโทรลเลอร์เพื่อตอบสนองแบบ real-time พร้อมพัฒนา mobile application สำหรับติดตามระยะไกลและสั่งควบคุมด้วยตนเอง",
+    features: ["Moisture / Rain Sensor", "Microcontroller", "Motor", "Mobile App", "Manual Override"],
+    flow: "Sensor → Detection → Microcontroller → Decision → Motor → Move Clothesline"
+  },
+  {
+    cat: "ux",
+    title: "Open House: Sun of Prosperity",
+    sub: "Interactive Open House Experience",
+    desc: "ออกแบบธีม 10 Houses, Visitor Flow, Staff 20 คน, ชั้น 12 & 14 และ Scenario ฝน / No-show",
+    features: ["10 Houses", "20 Staff", "Elevator", "Scenarios"],
+    flow: "Visitor Flow → Houses → Staff → Floor / Elevator → Scenarios"
+  },
+  {
+    cat: "ux",
+    title: "Interactive 3D Tarot",
+    sub: "Three.js / GLB",
+    desc: "เว็บ Tarot 3D หลายหน้า โต้ตอบกับโมเดลและไพ่ ธีม Dark Purple",
+    features: ["Profile", "Reading", "Card Selection", "Zoom"],
+    flow: "Tarot.html → Profile → Reading → Card 01 / 02 / 03"
+  },
+  {
+    cat: "ux",
+    title: "Space Explorer 3D",
+    sub: "Interactive Solar System",
+    desc: "ระบบสุริยะ 3D: Sun, Venus, Earth, Saturn หมุนรอบตัวเอง ไม่โคจรรอบกัน",
+    features: ["Three.js", "3D Visualization"],
+    flow: "Object Self Rotation → ไม่มี Orbital Animation"
+  }
+];
+const P=PROJECTS.map(o=>[o.cat,o.title,o.sub,o.desc,o.features,o.flow,o.link]);
+const S=["Business Requirement Analysis","Functional / Non-functional Requirements","System Analysis","Requirement Documentation","User Flow / Business Flow","Use Case","UML","DFD","ERD","Database Design","UI/UX Requirement","API & System Integration","System Testing","Project Planning","Problem Solving","Documentation","Stakeholder Thinking"];
+const CC={ba:"#C8A96A",da:"#6FB7A8",app:"#A597E0",ux:"#E093A8"};
+function cover(i){const p=P[i],st=p[5].split(" → "),n=st.length,c=CC[p[0]],two=n>4,per=two?Math.ceil(n/2):n;
+ let g="";for(let x=0;x<=400;x+=40)g+=`<path d="M${x} 0V260"/>`;for(let y=0;y<=260;y+=40)g+=`<path d="M0 ${y}H400"/>`;
+ const pts=st.map((_,k)=>{const r=two?Math.floor(k/per):0;let q=k%per;if(r%2)q=per-1-q;return[44+q*(312/(per-1)),two?92+r*84:130]});
+ return `<svg viewBox="0 0 400 260"><rect width="400" height="260" fill="#111113"/><circle cx="${300-i*14}" cy="40" r="150" fill="${c}" opacity=".09"/><g stroke="#fff" opacity=".05" fill="none">${g}</g><polyline points="${pts.map(q=>q.join(",")).join(" ")}" fill="none" stroke="${c}" stroke-width="1.5" opacity=".7"/>${pts.map((q,k)=>`<circle cx="${q[0]}" cy="${q[1]}" r="15" fill="${k==n-1?c:"#111113"}" stroke="${c}" stroke-width="1.5"/><text x="${q[0]}" y="${q[1]+5}" text-anchor="middle" font-size="15" font-weight="700" font-family="sans-serif" fill="${k==n-1?"#111113":c}">${k+1}</text>`).join("")}<text x="20" y="242" font-size="13" font-weight="700" letter-spacing="2" font-family="sans-serif" fill="${c}">${G[p[0]].toUpperCase()}</text><text x="380" y="242" text-anchor="end" font-size="14" font-weight="700" font-family="sans-serif" fill="#fff" opacity=".55">${String(i+1).padStart(2,"0")}</text></svg>`}
+const $=i=>document.getElementById(i),li=a=>a.map(x=>"<li>"+x+"</li>").join("");
+$("cP").textContent=$("cP2").textContent=P.length;$("cG").textContent=Object.keys(G).length;$("cS").textContent=S.length;
+$("proc").innerHTML=["Business Problem","Requirement","Analysis","Process","System Design","Development","Testing","Result"].map((x,i)=>`<div><span>0${i+1}</span><b>${x}</b></div>`).join("");
+$("caps").innerHTML=S.map((x,i)=>`<div><b style="font-weight:400">${x}</b><span>${String(i+1).padStart(2,"0")}</span></div>`).join("");
+let fk="all";
+function draw(){let n=0;$("ls").innerHTML=P.map((p,i)=>[p,i]).filter(([p])=>fk==="all"||p[0]===fk).map(([p,i])=>`<button class="row2" data-i="${i}"><span class="n">${String(++n).padStart(2,"0")}</span><span class="th" aria-hidden="true">${cover(i)}</span><span class="t s">${p[1]}<small>${p[2]}</small></span><span class="g cap">${G[p[0]]}</span><span class="a">→</span></button>`).join("");
+ $("fl").querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.k===fk))}
+$("fl").innerHTML=[["all","All"],...Object.entries(G)].map(([k,v])=>`<button data-k="${k}">${v}</button>`).join("");
+$("fl").onclick=e=>{if(e.target.dataset.k){fk=e.target.dataset.k;draw()}};draw();
+const pv=$("pv");
+$("ls").addEventListener("pointerover",e=>{const r=e.target.closest(".row2");if(!r||e.pointerType==="touch")return;$("pvi").innerHTML=cover(+r.dataset.i);$("pvl").innerHTML=li(P[+r.dataset.i][5].split(" → "));pv.classList.add("on")});
+$("ls").addEventListener("pointerleave",()=>pv.classList.remove("on"));
+const dg=$("dg");
+$("ls").onclick=e=>{const r=e.target.closest(".row2");if(!r)return;const p=P[+r.dataset.i];pv.classList.remove("on");
+ $("dgc").innerHTML=`<div><div class="cap">${G[p[0]]}</div><h3 class="s">${p[1]}</h3><div class="cap" style="margin-bottom:28px">${p[2]}</div><p>${p[3]}</p><ul class="ft">${li(p[4])}</ul>${p[6]?`<a class="btn" href="${p[6]}" target="_blank" rel="noopener">View code ↗</a>`:""}</div><div><div class="cv" aria-hidden="true">${cover(+r.dataset.i)}</div><div class="cap" style="margin-bottom:20px">Flow</div><ol class="tl">${li(p[5].split(" → "))}</ol></div>`;
+ dg.showModal();dg.scrollTop=0};
+$("hart").innerHTML=[1,6,8].map(k=>"<div>"+cover(k)+"</div>").join("");
+$("cl").onclick=()=>dg.close();
+addEventListener("pointermove",e=>{const s=$("spot").style;s.setProperty("--mx",e.clientX+"px");s.setProperty("--my",e.clientY+"px")});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("on");io.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll(".rv").forEach((el,i)=>{el.style.transitionDelay=(i%4)*90+"ms";io.observe(el)});
+setTimeout(()=>document.querySelectorAll(".rv").forEach(el=>el.classList.add("on")),2500);
+</script>
+</body>
+</html>
